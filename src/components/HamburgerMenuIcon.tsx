@@ -3,9 +3,7 @@ import React, { useState } from "react"
 export const HamburgerMenuIcon: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false)
 
-    const handleClick = () => {
-        setIsOpen(!isOpen)
-    }
+    const handleClick = () => setIsOpen(!isOpen)
 
     return (
         <button
