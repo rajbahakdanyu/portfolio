@@ -11,3 +11,17 @@
         src: url(/public/assets/fonts/Alice.ttf) format("ttf");
     }
 }
+@layer components {
+    .hamburger-icon {
+        @apply bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+}
