@@ -8,7 +8,7 @@ export const HamburgerMenuIcon: React.FC = () => {
     return (
         <button
             onClick={handleClick}
-            className='flex flex-col justify-center items-center'>
+            className='flex flex-col justify-center items-center z-50'>
             <span
                 className={`hamburger-icon ${
                     isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
