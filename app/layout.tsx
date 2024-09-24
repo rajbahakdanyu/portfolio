@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const alice = localFont({
     src: "./fonts/Alice.ttf",
@@ -19,7 +20,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en'>
-            <body className={`${alice.variable}  antialiased`}>{children}</body>
+            <body className={`${alice.variable}  antialiased`}>
+                <ThemeProvider
+                    attribute='class'
+                    defaultTheme='dark'
+                    disableTransitionOnChange>
+                    {children}
+                </ThemeProvider>
+            </body>
         </html>
     )
 }
