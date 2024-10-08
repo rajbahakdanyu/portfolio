@@ -30,7 +30,6 @@ const Home = () => (
                             features and technologies used.
                         </p>
                     </div>
-                    {/* Add more project cards as needed */}
                 </div>
             </section>
 

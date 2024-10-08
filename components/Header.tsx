@@ -2,7 +2,7 @@ import React from "react"
 import Link from "next/link"
 
 const Header = () => (
-    <header className='bg-gray-800 shadow-lg'>
+    <header>
         <nav className='container mx-auto px-6 py-4'>
             <ul className='flex space-x-6 justify-end'>
                 <li>
