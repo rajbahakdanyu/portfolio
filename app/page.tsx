@@ -2,17 +2,17 @@
 
 import { useState, useEffect } from "react";
 import {
-  Menu,
-  X,
-  Github,
-  Linkedin,
-  Mail,
-  ExternalLink,
-  ArrowRight,
-  Code2,
-  Palette,
-  Zap,
-} from "lucide-react";
+  FiCode,
+  FiArrowRight,
+  FiExternalLink,
+  FiMail,
+  FiX,
+  FiMenu,
+  FiGithub,
+  FiLinkedin,
+  FiZap,
+  FiFigma,
+} from "react-icons/fi";
 
 const PortfolioWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,17 +53,17 @@ const PortfolioWebsite = () => {
     {
       name: "Frontend",
       items: ["React", "Next.js", "TypeScript", "Tailwind"],
-      icon: Code2,
+      icon: <FiCode className="w-12 h-12 text-blue-400 mb-4" />,
     },
     {
       name: "Backend",
       items: ["Node.js", "Python", "PostgreSQL", "Redis"],
-      icon: Zap,
+      icon: <FiZap className="w-12 h-12 text-blue-400 mb-4" />,
     },
     {
       name: "Design",
       items: ["Figma", "UI/UX", "Animation", "Responsive"],
-      icon: Palette,
+      icon: <FiFigma className="w-12 h-12 text-blue-400 mb-4" />,
     },
   ];
 
@@ -107,7 +107,7 @@ const PortfolioWebsite = () => {
               className="md:hidden text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </button>
           </div>
         </div>
@@ -160,7 +160,7 @@ const PortfolioWebsite = () => {
               type="button"
               className="px-8 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-2"
             >
-              View Projects <ArrowRight size={20} />
+              View Projects <FiArrowRight size={20} />
             </button>
             <button
               type="button"
@@ -172,20 +172,28 @@ const PortfolioWebsite = () => {
 
           <div className="flex items-center justify-center gap-6 pt-8">
             {[
-              { Icon: Github, href: "https://github.com", name: "github" },
               {
-                Icon: Linkedin,
+                icon: <FiGithub />,
+                href: "https://github.com",
+                name: "github",
+              },
+              {
+                icon: <FiLinkedin />,
                 href: "https://linkedin.com",
                 name: "linkedin",
               },
-              { Icon: Mail, href: "mailto:contact@example.com", name: "mail" },
-            ].map(({ Icon, href, name }) => (
+              {
+                icon: <FiMail />,
+                href: "mailto:contact@example.com",
+                name: "mail",
+              },
+            ].map(({ icon, href, name }) => (
               <a
                 key={name}
                 href={href}
                 className="p-3 border border-slate-700 hover:border-blue-400 rounded-lg transition-all hover:scale-110 hover:bg-slate-800"
               >
-                <Icon size={24} />
+                {icon}
               </a>
             ))}
           </div>
@@ -207,7 +215,7 @@ const PortfolioWebsite = () => {
                 key={category.name}
                 className="p-8 bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl hover:border-blue-500 transition-all hover:scale-105"
               >
-                <category.icon className="w-12 h-12 text-blue-400 mb-4" />
+                {category.icon}
                 <h3 className="text-2xl font-bold mb-4">{category.name}</h3>
                 <div className="flex flex-wrap gap-2">
                   {category.items.map((item) => (
@@ -242,7 +250,7 @@ const PortfolioWebsite = () => {
               >
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-xl font-bold">{project.title}</h3>
-                  <ExternalLink
+                  <FiExternalLink
                     className="text-slate-400 group-hover:text-blue-400 transition-colors"
                     size={20}
                   />
@@ -284,7 +292,7 @@ const PortfolioWebsite = () => {
             type="button"
             className="px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-2 mx-auto"
           >
-            <Mail size={20} />
+            <FiMail size={20} />
             Get In Touch
           </button>
         </div>
