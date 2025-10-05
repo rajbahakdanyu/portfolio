@@ -1,17 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
-  FiCode,
   FiArrowRight,
+  FiCode,
   FiExternalLink,
-  FiMail,
-  FiX,
-  FiMenu,
+  FiFigma,
   FiGithub,
   FiLinkedin,
+  FiMail,
+  FiMenu,
+  FiX,
   FiZap,
-  FiFigma,
 } from "react-icons/fi";
 
 const PortfolioWebsite = () => {
@@ -141,7 +141,7 @@ const PortfolioWebsite = () => {
             <h1 className="text-5xl md:text-7xl font-bold animate-fade-in">
               Hi, I'm{" "}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Your Name
+                Danyu Rajbahak
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300">
@@ -174,17 +174,17 @@ const PortfolioWebsite = () => {
             {[
               {
                 icon: <FiGithub />,
-                href: "https://github.com",
+                href: "https://github.com/rajbahakdanyu",
                 name: "github",
               },
               {
                 icon: <FiLinkedin />,
-                href: "https://linkedin.com",
+                href: "https://www.linkedin.com/in/danyu-rajbahak",
                 name: "linkedin",
               },
               {
                 icon: <FiMail />,
-                href: "mailto:contact@example.com",
+                href: "mailto:rajbahakdanyu@gmail.com",
                 name: "mail",
               },
             ].map(({ icon, href, name }) => (
@@ -301,7 +301,7 @@ const PortfolioWebsite = () => {
       {/* Footer */}
       <footer className="border-t border-slate-800 py-8 px-6">
         <div className="max-w-6xl mx-auto text-center text-slate-400">
-          <p>© 2025 Danyu Rajbahak. Built with Next.js, Bun & Framer Motion.</p>
+          <p>© 2025 Danyu Rajbahak</p>
         </div>
       </footer>
     </div>
