@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import {
   Menu,
   X,
@@ -18,7 +20,7 @@ const PortfolioWebsite = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener("mousemove", handleMouseMove);
@@ -87,6 +89,7 @@ const PortfolioWebsite = () => {
               {["Home", "About", "Projects", "Contact"].map((item) => (
                 <button
                   key={item}
+                  type="button"
                   onClick={() => setActiveSection(item.toLowerCase())}
                   className={`transition-colors hover:text-blue-400 ${
                     activeSection === item.toLowerCase()
@@ -100,6 +103,7 @@ const PortfolioWebsite = () => {
             </div>
 
             <button
+              type="button"
               className="md:hidden text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -115,6 +119,7 @@ const PortfolioWebsite = () => {
               {["Home", "About", "Projects", "Contact"].map((item) => (
                 <button
                   key={item}
+                  type="button"
                   onClick={() => {
                     setActiveSection(item.toLowerCase());
                     setIsMenuOpen(false);
@@ -151,19 +156,33 @@ const PortfolioWebsite = () => {
           </p>
 
           <div className="flex items-center justify-center gap-4">
-            <button className="px-8 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-2">
+            <button
+              type="button"
+              className="px-8 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-2"
+            >
               View Projects <ArrowRight size={20} />
             </button>
-            <button className="px-8 py-3 border border-slate-600 hover:border-blue-400 rounded-lg font-medium transition-all hover:scale-105">
+            <button
+              type="button"
+              className="px-8 py-3 border border-slate-600 hover:border-blue-400 rounded-lg font-medium transition-all hover:scale-105"
+            >
               Contact Me
             </button>
           </div>
 
           <div className="flex items-center justify-center gap-6 pt-8">
-            {[Github, Linkedin, Mail].map((Icon, idx) => (
+            {[
+              { Icon: Github, href: "https://github.com", name: "github" },
+              {
+                Icon: Linkedin,
+                href: "https://linkedin.com",
+                name: "linkedin",
+              },
+              { Icon: Mail, href: "mailto:contact@example.com", name: "mail" },
+            ].map(({ Icon, href, name }) => (
               <a
-                key={idx}
-                href="#"
+                key={name}
+                href={href}
                 className="p-3 border border-slate-700 hover:border-blue-400 rounded-lg transition-all hover:scale-110 hover:bg-slate-800"
               >
                 <Icon size={24} />
@@ -183,17 +202,17 @@ const PortfolioWebsite = () => {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {skills.map((category, idx) => (
+            {skills.map((category) => (
               <div
-                key={idx}
+                key={category.name}
                 className="p-8 bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl hover:border-blue-500 transition-all hover:scale-105"
               >
                 <category.icon className="w-12 h-12 text-blue-400 mb-4" />
                 <h3 className="text-2xl font-bold mb-4">{category.name}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {category.items.map((item, i) => (
+                  {category.items.map((item) => (
                     <span
-                      key={i}
+                      key={item}
                       className="px-3 py-1 bg-slate-700/50 rounded-full text-sm text-slate-300"
                     >
                       {item}
@@ -216,9 +235,9 @@ const PortfolioWebsite = () => {
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, idx) => (
+            {projects.map((project) => (
               <div
-                key={idx}
+                key={project.title}
                 className="group p-6 bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl hover:border-blue-500 transition-all hover:scale-105"
               >
                 <div className="flex items-start justify-between mb-4">
@@ -232,9 +251,9 @@ const PortfolioWebsite = () => {
                 <p className="text-slate-400 mb-4">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
+                  {project.tech.map((tech) => (
                     <span
-                      key={i}
+                      key={tech}
                       className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-sm text-blue-400"
                     >
                       {tech}
@@ -261,7 +280,10 @@ const PortfolioWebsite = () => {
             opportunities to be part of your vision.
           </p>
 
-          <button className="px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-2 mx-auto">
+          <button
+            type="button"
+            className="px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-2 mx-auto"
+          >
             <Mail size={20} />
             Get In Touch
           </button>
@@ -271,7 +293,7 @@ const PortfolioWebsite = () => {
       {/* Footer */}
       <footer className="border-t border-slate-800 py-8 px-6">
         <div className="max-w-6xl mx-auto text-center text-slate-400">
-          <p>© 2025 Your Name. Built with Next.js, Bun & Framer Motion.</p>
+          <p>© 2025 Danyu Rajbahak. Built with Next.js, Bun & Framer Motion.</p>
         </div>
       </footer>
     </div>
