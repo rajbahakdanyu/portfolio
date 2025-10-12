@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Sans, Noto_Sans_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const notoMono = Noto_Sans_Mono({
+  variable: "--font-noto-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Danyu Rajbahak | Portfolio",
-  description: "Showcasing my work and projects",
+  title: "Danyu Rajbahak",
+  description: "Showcasing my work",
 };
 
 export default function RootLayout({
@@ -24,9 +24,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <body className={`${notoSans.variable} ${notoMono.variable} antialiased`}>
         {children}
       </body>
     </html>
