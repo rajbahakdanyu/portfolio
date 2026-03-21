@@ -1,11 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiMail } from "react-icons/fi";
+import { useState } from "react";
+import { FiCheck, FiCopy, FiMail } from "react-icons/fi";
 import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
 import { CONNECT } from "@/lib/data";
 
 export default function ContactSection() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("rajbahakdanyu@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section id="contact" className="relative py-32 px-6">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
@@ -85,15 +94,27 @@ export default function ContactSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="text-center"
+          className="flex flex-wrap justify-center gap-4"
         >
           <a
             href="mailto:rajbahakdanyu@gmail.com"
-            className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold text-lg hover:scale-105 hover:shadow-[0_0_45px_rgba(124,58,237,0.5)] transition-[transform,box-shadow] duration-200"
+            className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-10 py-4 text-lg font-semibold text-white transition-[transform,box-shadow] duration-200 hover:scale-105 hover:shadow-[0_0_45px_rgba(124,58,237,0.5)]"
           >
             <FiMail size={20} />
             Send Me a Message
           </a>
+          <button
+            type="button"
+            onClick={copyEmail}
+            className="inline-flex items-center gap-3 rounded-full border border-white/20 px-10 py-4 text-lg font-semibold text-gray-300 transition-[transform,color,border-color,background-color] duration-200 hover:scale-105 hover:border-white/40 hover:bg-white/[0.06] hover:text-white"
+          >
+            {copied ? (
+              <FiCheck size={20} className="text-emerald-400" />
+            ) : (
+              <FiCopy size={20} />
+            )}
+            {copied ? "Copied!" : "Copy Email"}
+          </button>
         </motion.div>
       </div>
     </section>

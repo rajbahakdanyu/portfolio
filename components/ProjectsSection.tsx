@@ -1,9 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { IconType } from "react-icons";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
+import {
+  SiD3,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiOpenai,
+  SiPostgresql,
+  SiReact,
+  SiSocketdotio,
+  SiStripe,
+  SiTypescript,
+} from "react-icons/si";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { PROJECTS } from "@/lib/data";
+
+const TAG_ICONS: Record<string, IconType> = {
+  "Next.js": SiNextdotjs,
+  TypeScript: SiTypescript,
+  React: SiReact,
+  "Node.js": SiNodedotjs,
+  PostgreSQL: SiPostgresql,
+  MongoDB: SiMongodb,
+  Stripe: SiStripe,
+  "OpenAI API": SiOpenai,
+  "Socket.io": SiSocketdotio,
+  "D3.js": SiD3,
+};
 
 export default function ProjectsSection() {
   return (
@@ -86,14 +112,18 @@ export default function ProjectsSection() {
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-full text-xs font-medium border border-white/[0.12] text-gray-400 bg-white/[0.04]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {project.tags.map((tag) => {
+                    const Icon = TAG_ICONS[tag];
+                    return (
+                      <span
+                        key={tag}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.12] bg-white/[0.04] px-3 py-1 text-xs font-medium text-gray-400"
+                      >
+                        {Icon && <Icon size={11} />}
+                        {tag}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>
