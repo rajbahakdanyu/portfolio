@@ -29,22 +29,19 @@ export default function HeroSection() {
       ref={ref}
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* Animated gradient orbs */}
+      {/* Animated gradient orbs — pure CSS so they run on the compositor */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{ x: [0, 60, 0], y: [0, -40, 0] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-violet-700/20 blur-[130px]"
+        <div
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-violet-700/20 blur-[130px] will-change-transform"
+          style={{ animation: "orb-float-a 14s ease-in-out infinite" }}
         />
-        <motion.div
-          animate={{ x: [0, -60, 0], y: [0, 50, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-1/4 right-1/4 w-[420px] h-[420px] rounded-full bg-indigo-700/20 blur-[110px]"
+        <div
+          className="absolute bottom-1/4 right-1/4 w-[420px] h-[420px] rounded-full bg-indigo-700/20 blur-[110px] will-change-transform"
+          style={{ animation: "orb-float-b 18s ease-in-out infinite" }}
         />
-        <motion.div
-          animate={{ x: [0, 40, 0], y: [0, 35, 0] }}
-          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 right-1/3 w-72 h-72 rounded-full bg-pink-700/15 blur-[90px]"
+        <div
+          className="absolute top-1/2 right-1/3 w-72 h-72 rounded-full bg-pink-700/15 blur-[90px] will-change-transform"
+          style={{ animation: "orb-float-c 11s ease-in-out infinite" }}
         />
       </div>
 
@@ -60,7 +57,7 @@ export default function HeroSection() {
 
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 text-center px-6 max-w-5xl mx-auto"
+        className="relative z-10 text-center px-6 max-w-5xl mx-auto will-change-[transform,opacity]"
       >
         {/* Badge */}
         <motion.div

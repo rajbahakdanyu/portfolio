@@ -1,25 +1,20 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { FiMail } from "react-icons/fi";
 import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
 import { CONNECT } from "@/lib/data";
 
 export default function ContactSection() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
-    <section id="contact" ref={ref} className="relative py-32 px-6">
+    <section id="contact" className="relative py-32 px-6">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
 
       {/* Background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{ scale: [1, 1.15, 1], opacity: [0.07, 0.14, 0.07] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-violet-700 blur-[120px]"
+        <div
+          className="absolute bottom-0 left-1/2 w-[600px] h-[300px] rounded-full bg-violet-700 blur-[120px] will-change-transform"
+          style={{ animation: "glow-pulse 8s ease-in-out infinite" }}
         />
       </div>
 
@@ -27,7 +22,8 @@ export default function ContactSection() {
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
           className="text-center mb-14"
         >
           <motion.span
@@ -57,7 +53,8 @@ export default function ContactSection() {
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
           className="grid sm:grid-cols-3 gap-5 mb-12"
         >
           {CONNECT.map((item) => (
@@ -86,7 +83,8 @@ export default function ContactSection() {
         <motion.div
           variants={fadeInUp}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
           className="text-center"
         >
           <a

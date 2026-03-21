@@ -1,22 +1,19 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { PROJECTS } from "@/lib/data";
 
 export default function ProjectsSection() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
-    <section id="projects" ref={ref} className="relative py-32 px-6">
+    <section id="projects" className="relative py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
           className="text-center mb-16"
         >
           <motion.span
@@ -39,7 +36,8 @@ export default function ProjectsSection() {
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
           className="grid md:grid-cols-2 gap-6"
         >
           {PROJECTS.map((project) => (
@@ -105,7 +103,8 @@ export default function ProjectsSection() {
         <motion.div
           variants={fadeInUp}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
           className="text-center mt-12"
         >
           <a

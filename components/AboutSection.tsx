@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { FiGithub } from "react-icons/fi";
 import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
 
@@ -13,16 +12,14 @@ const STATS = [
 ];
 
 export default function AboutSection() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="about" ref={ref} className="relative py-32 px-6">
+    <section id="about" className="relative py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
           className="grid md:grid-cols-2 gap-16 items-center"
         >
           {/* Text */}

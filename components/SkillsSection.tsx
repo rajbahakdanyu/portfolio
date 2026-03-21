@@ -1,16 +1,12 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
 import { SKILLS } from "@/lib/data";
 
 export default function SkillsSection() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
-    <section id="skills" ref={ref} className="relative py-32 px-6">
+    <section id="skills" className="relative py-32 px-6">
       {/* Dividers */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
@@ -19,7 +15,8 @@ export default function SkillsSection() {
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
           className="text-center mb-16"
         >
           <motion.span
@@ -42,7 +39,8 @@ export default function SkillsSection() {
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
           className="flex flex-wrap justify-center gap-4"
         >
           {SKILLS.map((skill) => (
