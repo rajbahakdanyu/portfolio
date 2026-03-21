@@ -59,17 +59,6 @@ export default function HeroSection() {
         style={{ y, opacity }}
         className="relative z-10 text-center px-6 max-w-5xl mx-auto will-change-[transform,opacity]"
       >
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-violet-500/30 bg-violet-500/[0.08] text-violet-300 text-sm font-medium mb-10 tracking-wide"
-        >
-          <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
-          Available for new opportunities
-        </motion.div>
-
         {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
