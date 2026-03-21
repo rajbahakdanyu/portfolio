@@ -13,24 +13,17 @@ const notoMono = Noto_Sans_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Danyu Rajbahak — Full-Stack Developer",
+  title: "Danyu Rajbahak",
   description:
-    "Full-stack developer specialising in React, Next.js and TypeScript. Explore my projects, skills and get in touch.",
+    "Full-stack developer. Explore my projects, skills and get in touch.",
   metadataBase: new URL("https://rajbahakdanyu.github.io"),
   openGraph: {
-    title: "Danyu Rajbahak — Full-Stack Developer",
-    description:
-      "Full-stack developer specialising in React, Next.js and TypeScript.",
+    title: "Danyu Rajbahak",
+    description: "Full-stack developer",
     url: "/portfolio",
     siteName: "Danyu Rajbahak",
     locale: "en_US",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Danyu Rajbahak — Full-Stack Developer",
-    description:
-      "Full-stack developer specialising in React, Next.js and TypeScript.",
   },
 };
 
