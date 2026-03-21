@@ -66,27 +66,65 @@ export default function ContactSection() {
           viewport={{ once: true, margin: "-80px" }}
           className="grid sm:grid-cols-3 gap-5 mb-12"
         >
-          {CONNECT.map((item) => (
-            <motion.a
-              key={item.title}
-              href={item.href}
-              target={item.href.startsWith("mailto") ? undefined : "_blank"}
-              rel="noopener noreferrer"
-              variants={scaleIn}
-              className="group relative p-7 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm hover:border-white/20 hover:-translate-y-2 hover:scale-[1.03] transition-[transform,border-color] duration-200 text-center overflow-hidden will-change-transform"
-            >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300`}
-              />
-              <div
-                className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mx-auto mb-4`}
+          {CONNECT.map((item) => {
+            const isEmail = item.href.startsWith("mailto");
+            if (isEmail) {
+              return (
+                <motion.button
+                  type="button"
+                  key={item.title}
+                  onClick={copyEmail}
+                  variants={scaleIn}
+                  className="group relative p-7 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm hover:border-white/20 hover:-translate-y-2 hover:scale-[1.03] transition-[transform,border-color] duration-200 text-center overflow-hidden will-change-transform"
+                >
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300`}
+                  />
+                  <div
+                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mx-auto mb-4 transition-transform duration-200`}
+                  >
+                    {copied ? (
+                      <FiCheck size={24} className="text-white" />
+                    ) : (
+                      <item.icon size={24} className="text-white" />
+                    )}
+                  </div>
+                  <h3 className="text-white font-bold mb-1.5">{item.title}</h3>
+                  <p className="text-gray-500 text-sm">
+                    {copied ? "Copied!" : item.description}
+                  </p>
+                  <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    {copied ? (
+                      <FiCheck size={13} className="text-emerald-400" />
+                    ) : (
+                      <FiCopy size={13} className="text-gray-500" />
+                    )}
+                  </div>
+                </motion.button>
+              );
+            }
+            return (
+              <motion.a
+                key={item.title}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={scaleIn}
+                className="group relative p-7 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm hover:border-white/20 hover:-translate-y-2 hover:scale-[1.03] transition-[transform,border-color] duration-200 text-center overflow-hidden will-change-transform"
               >
-                <item.icon size={24} className="text-white" />
-              </div>
-              <h3 className="text-white font-bold mb-1.5">{item.title}</h3>
-              <p className="text-gray-500 text-sm">{item.description}</p>
-            </motion.a>
-          ))}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300`}
+                />
+                <div
+                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mx-auto mb-4`}
+                >
+                  <item.icon size={24} className="text-white" />
+                </div>
+                <h3 className="text-white font-bold mb-1.5">{item.title}</h3>
+                <p className="text-gray-500 text-sm">{item.description}</p>
+              </motion.a>
+            );
+          })}
         </motion.div>
 
         <motion.div
@@ -94,7 +132,7 @@ export default function ContactSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="flex flex-wrap justify-center gap-4"
+          className="flex justify-center"
         >
           <a
             href="mailto:rajbahakdanyu@gmail.com"
@@ -103,18 +141,6 @@ export default function ContactSection() {
             <FiMail size={20} />
             Send Me a Message
           </a>
-          <button
-            type="button"
-            onClick={copyEmail}
-            className="inline-flex items-center gap-3 rounded-full border border-white/20 px-10 py-4 text-lg font-semibold text-gray-300 transition-[transform,color,border-color,background-color] duration-200 hover:scale-105 hover:border-white/40 hover:bg-white/[0.06] hover:text-white"
-          >
-            {copied ? (
-              <FiCheck size={20} className="text-emerald-400" />
-            ) : (
-              <FiCopy size={20} />
-            )}
-            {copied ? "Copied!" : "Copy Email"}
-          </button>
         </motion.div>
       </div>
     </section>
