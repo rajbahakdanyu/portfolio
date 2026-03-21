@@ -2,6 +2,7 @@ import AboutSection from "@/components/AboutSection";
 import BackToTop from "@/components/BackToTop";
 import ContactSection from "@/components/ContactSection";
 import CursorGlow from "@/components/CursorGlow";
+import ExperienceSection from "@/components/ExperienceSection";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
@@ -18,6 +19,7 @@ export default function PortfolioWebsite() {
         <Navbar />
         <HeroSection />
         <AboutSection />
+        <ExperienceSection />
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />

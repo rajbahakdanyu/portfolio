@@ -15,7 +15,76 @@ import {
 } from "react-icons/si";
 import { TbTestPipe } from "react-icons/tb";
 
-export const NAV_LINKS = ["About", "Skills", "Projects", "Contact"];
+export const NAV_LINKS = [
+  "About",
+  "Experience",
+  "Skills",
+  "Projects",
+  "Contact",
+];
+
+export interface ExperienceItem {
+  title: string;
+  company: string;
+  type?: string;
+  period: string;
+  location?: string;
+  bullets?: string[];
+}
+
+export const EXPERIENCE: ExperienceItem[] = [
+  {
+    title: "Full Stack Engineer",
+    company: "Flight Centre Travel Group",
+    type: "Full-time",
+    period: "Nov 2024 – Present",
+    location: "Brisbane, Australia · Hybrid",
+    bullets: [
+      "Building and maintaining full-stack features across internal travel booking platforms using React, TypeScript, and AWS Lambda.",
+      "Collaborating in an agile cross-functional team to deliver scalable, cloud-native solutions.",
+    ],
+  },
+  {
+    title: "Full Stack Developer",
+    company: "DLTx Labs",
+    type: "Full-time",
+    period: "Nov 2023 – Oct 2024",
+    location: "Brisbane, Australia · Hybrid",
+    bullets: [
+      "Developed and deployed containerised microservices using Docker; conducted load testing to ensure system reliability at scale.",
+      "Contributed across the full stack — from React frontends to Node.js APIs and cloud infrastructure.",
+    ],
+  },
+  {
+    title: "Flutter Developer",
+    company: "Code Himalaya",
+    type: "Full-time",
+    period: "Aug 2021 – Jun 2022",
+    location: "Kathmandu, Nepal · On-site",
+    bullets: [
+      "Built cross-platform mobile applications with Flutter, integrating NoSQL databases and RESTful APIs via Postman.",
+    ],
+  },
+  {
+    title: "Django Developer",
+    company: "4 Space Technology",
+    type: "Internship",
+    period: "Nov 2020 – Feb 2021",
+    location: "Kathmandu, Nepal · Remote",
+    bullets: [
+      "Developed back-end web features using Django and jQuery, helping deliver client-facing projects during a 4-month internship.",
+    ],
+  },
+  {
+    title: "Laravel Developer",
+    company: "Freelance",
+    type: "Freelance",
+    period: "Jun 2019 – Oct 2019",
+    bullets: [
+      "Delivered freelance web projects using Laravel, building custom back-end solutions for clients.",
+    ],
+  },
+];
 
 export interface Skill {
   name: string;
