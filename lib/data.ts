@@ -1,18 +1,18 @@
 import type { IconType } from "react-icons";
+import { FaAws } from "react-icons/fa";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import {
   SiDocker,
   SiGit,
-  SiJavascript,
   SiMongodb,
-  SiNextdotjs,
-  SiNodedotjs,
+  SiMui,
   SiPostgresql,
-  SiPython,
   SiReact,
   SiTailwindcss,
   SiTypescript,
+  SiVitest,
 } from "react-icons/si";
+import { TbTestPipe } from "react-icons/tb";
 
 export const NAV_LINKS = ["About", "Skills", "Projects", "Contact"];
 
@@ -25,15 +25,15 @@ export interface Skill {
 export const SKILLS: Skill[] = [
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
   { name: "React", icon: SiReact, color: "#61DAFB" },
-  { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
-  { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-  { name: "Python", icon: SiPython, color: "#3776AB" },
-  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+  { name: "AWS", icon: FaAws, color: "#FF9900" },
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
   { name: "Git", icon: SiGit, color: "#F05032" },
+  { name: "Vitest", icon: SiVitest, color: "#6E9F18" },
+  { name: "Playwright", icon: TbTestPipe, color: "#2EAD33" },
+  { name: "Material UI", icon: SiMui, color: "#007FFF" },
 ];
 
 export interface Project {
