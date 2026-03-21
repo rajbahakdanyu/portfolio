@@ -6,8 +6,6 @@ import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
 
 const STATS = [
   { label: "Years of Experience", value: "3+" },
-  { label: "Projects Completed", value: "20+" },
-  { label: "Technologies", value: "15+" },
   { label: "Cups of Coffee", value: "∞" },
 ];
 
