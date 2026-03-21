@@ -6,7 +6,9 @@ import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
 
 const STATS = [
   { label: "Years of Experience", value: "3+" },
-  { label: "Cups of Coffee", value: "∞" },
+  { label: "Companies Worked At", value: "4" },
+  { label: "Countries Worked In", value: "2" },
+  { label: "Cups of Coffee Consumed", value: "∞" },
 ];
 
 export default function AboutSection() {
