@@ -6,6 +6,7 @@ import {
   SiGit,
   SiMongodb,
   SiMui,
+  SiNextdotjs,
   SiPostgresql,
   SiReact,
   SiTailwindcss,
@@ -23,17 +24,23 @@ export interface Skill {
 }
 
 export const SKILLS: Skill[] = [
+  // Languages & Frameworks
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
   { name: "React", icon: SiReact, color: "#61DAFB" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+  // Styling
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "Material UI", icon: SiMui, color: "#007FFF" },
+  // Databases
   { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+  // Cloud & Infrastructure
   { name: "AWS", icon: FaAws, color: "#FF9900" },
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
   { name: "Git", icon: SiGit, color: "#F05032" },
+  // Testing
   { name: "Vitest", icon: SiVitest, color: "#6E9F18" },
   { name: "Playwright", icon: TbTestPipe, color: "#2EAD33" },
-  { name: "Material UI", icon: SiMui, color: "#007FFF" },
 ];
 
 export interface Project {
