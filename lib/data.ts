@@ -6,9 +6,11 @@ import {
   SiGit,
   SiMongodb,
   SiMui,
+  SiNestjs,
   SiNextdotjs,
   SiPostgresql,
   SiReact,
+  SiRedis,
   SiTailwindcss,
   SiTypescript,
   SiVitest,
@@ -97,12 +99,14 @@ export const SKILLS: Skill[] = [
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
   { name: "React", icon: SiReact, color: "#61DAFB" },
   { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+  { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
   // Styling
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
   { name: "Material UI", icon: SiMui, color: "#007FFF" },
   // Databases
   { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+  { name: "Redis", icon: SiRedis, color: "#FF4438" },
   // Cloud & Infrastructure
   { name: "AWS", icon: FaAws, color: "#FF9900" },
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
