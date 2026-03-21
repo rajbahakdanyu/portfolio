@@ -1,9 +1,9 @@
 "use client";
 
-import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FiGithub } from "react-icons/fi";
+import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
 
 const STATS = [
   { label: "Years of Experience", value: "3+" },
