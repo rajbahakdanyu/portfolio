@@ -1,9 +1,9 @@
 "use client";
 
-import { scrollToSection } from "@/lib/hooks";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FiArrowDown, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { scrollToSection } from "@/lib/hooks";
 
 const SOCIAL_LINKS = [
   { icon: FiGithub, href: "https://github.com/rajbahakdanyu", label: "GitHub" },

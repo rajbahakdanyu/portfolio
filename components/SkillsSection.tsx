@@ -1,9 +1,9 @@
 "use client";
 
-import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
-import { SKILLS } from "@/lib/data";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
+import { SKILLS } from "@/lib/data";
 
 export default function SkillsSection() {
   const ref = useRef(null);

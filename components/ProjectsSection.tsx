@@ -1,10 +1,10 @@
 "use client";
 
-import { fadeInUp, staggerContainer } from "@/lib/animations";
-import { PROJECTS } from "@/lib/data";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { PROJECTS } from "@/lib/data";
 
 export default function ProjectsSection() {
   const ref = useRef(null);

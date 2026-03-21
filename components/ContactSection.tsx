@@ -1,10 +1,10 @@
 "use client";
 
-import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
-import { CONNECT } from "@/lib/data";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FiMail } from "react-icons/fi";
+import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
+import { CONNECT } from "@/lib/data";
 
 export default function ContactSection() {
   const ref = useRef(null);

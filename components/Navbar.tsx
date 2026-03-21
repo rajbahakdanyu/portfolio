@@ -1,11 +1,11 @@
 "use client";
 
-import { NAV_LINKS } from "@/lib/data";
-import { scrollToSection, useActiveSection } from "@/lib/hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import { NAV_LINKS } from "@/lib/data";
+import { scrollToSection, useActiveSection } from "@/lib/hooks";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
