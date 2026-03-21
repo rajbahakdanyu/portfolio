@@ -353,14 +353,14 @@ function HeroSection() {
           <button
             type="button"
             onClick={() => scrollToSection("projects")}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold tracking-wide hover:scale-105 hover:shadow-[0_0_35px_rgba(124,58,237,0.45)] transition-all duration-300"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold tracking-wide hover:scale-105 hover:shadow-[0_0_35px_rgba(124,58,237,0.45)] transition-[transform,box-shadow] duration-200"
           >
             View My Work
           </button>
           <button
             type="button"
             onClick={() => scrollToSection("contact")}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/20 text-white font-semibold tracking-wide hover:bg-white/[0.08] hover:border-white/40 hover:scale-105 transition-all duration-300"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/20 text-white font-semibold tracking-wide hover:bg-white/[0.08] hover:border-white/40 hover:scale-105 transition-[transform,border-color,background-color] duration-200"
           >
             Get In Touch
           </button>
@@ -396,7 +396,7 @@ function HeroSection() {
               target={href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
               aria-label={label}
-              className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/50 hover:bg-white/[0.06] hover:scale-110 transition-all duration-200"
+              className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/50 hover:bg-white/[0.06] hover:scale-110 transition-[transform,color,border-color,background-color] duration-150"
             >
               <Icon size={18} />
             </a>
@@ -484,7 +484,7 @@ function AboutSection() {
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
               <a
                 href="mailto:rajbahakdanyu@gmail.com"
-                className="px-6 py-3 rounded-full bg-violet-600 text-white font-medium hover:bg-violet-500 hover:scale-105 transition-all duration-200"
+                className="px-6 py-3 rounded-full bg-violet-600 text-white font-medium hover:bg-violet-500 hover:scale-105 transition-[transform,background-color] duration-200"
               >
                 Say Hello
               </a>
@@ -492,7 +492,7 @@ function AboutSection() {
                 href="https://github.com/rajbahakdanyu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/[0.08] hover:border-white/40 hover:scale-105 transition-all duration-200 flex items-center gap-2"
+                className="px-6 py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/[0.08] hover:border-white/40 hover:scale-105 transition-[transform,border-color,background-color] duration-200 flex items-center gap-2"
               >
                 <FiGithub size={16} />
                 GitHub
@@ -509,8 +509,7 @@ function AboutSection() {
               <motion.div
                 key={stat.label}
                 variants={scaleIn}
-                whileHover={{ scale: 1.04, y: -4 }}
-                className="relative p-7 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm hover:border-violet-500/40 transition-all duration-300 group overflow-hidden"
+                className="relative p-7 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm hover:border-violet-500/40 hover:scale-[1.04] hover:-translate-y-1 transition-[transform,border-color] duration-200 group overflow-hidden will-change-transform"
               >
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <p className="text-5xl font-black bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent mb-2">
@@ -574,16 +573,14 @@ function SkillsSection() {
             <motion.div
               key={skill.name}
               variants={scaleIn}
-              whileHover={{ scale: 1.1, y: -5 }}
-              whileTap={{ scale: 0.97 }}
-              className="group flex items-center gap-3 px-5 py-3 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm hover:border-white/25 hover:bg-white/[0.08] transition-all duration-300 cursor-default"
+              className="group flex items-center gap-3 px-5 py-3 rounded-2xl border border-white/[0.08] bg-white/[0.04] hover:border-white/25 hover:bg-white/[0.08] hover:-translate-y-1 hover:scale-105 active:scale-[0.97] transition-[transform,border-color,background-color] duration-150 cursor-default will-change-transform"
             >
               <skill.icon
                 size={22}
                 style={{ color: skill.color }}
-                className="transition-transform duration-200 group-hover:scale-110"
+                className="transition-transform duration-150 group-hover:scale-110"
               />
-              <span className="text-gray-300 font-medium text-sm group-hover:text-white transition-colors duration-200">
+              <span className="text-gray-300 font-medium text-sm group-hover:text-white transition-colors duration-150">
                 {skill.name}
               </span>
             </motion.div>
@@ -636,9 +633,7 @@ function ProjectsSection() {
             <motion.div
               key={project.title}
               variants={fadeInUp}
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="group relative rounded-3xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm overflow-hidden hover:border-white/20 hover:bg-white/[0.06] transition-all duration-500"
+              className="group relative rounded-3xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm overflow-hidden hover:border-white/20 hover:bg-white/[0.06] hover:-translate-y-2 transition-[transform,border-color,background-color] duration-200 will-change-transform"
             >
               {/* Top gradient strip */}
               <div
@@ -657,7 +652,7 @@ function ProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="GitHub"
-                      className="p-2 rounded-full border border-white/15 text-gray-500 hover:text-white hover:border-white/50 transition-all duration-200 hover:scale-110"
+                      className="p-2 rounded-full border border-white/15 text-gray-500 hover:text-white hover:border-white/50 hover:scale-110 transition-[transform,color,border-color] duration-150"
                     >
                       <FiGithub size={15} />
                     </a>
@@ -666,7 +661,7 @@ function ProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Live demo"
-                      className="p-2 rounded-full border border-white/15 text-gray-500 hover:text-white hover:border-white/50 transition-all duration-200 hover:scale-110"
+                      className="p-2 rounded-full border border-white/15 text-gray-500 hover:text-white hover:border-white/50 hover:scale-110 transition-[transform,color,border-color] duration-150"
                     >
                       <FiExternalLink size={15} />
                     </a>
@@ -704,7 +699,7 @@ function ProjectsSection() {
             href="https://github.com/rajbahakdanyu"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full border border-white/20 text-gray-300 font-medium hover:text-white hover:bg-white/[0.08] hover:border-white/40 hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full border border-white/20 text-gray-300 font-medium hover:text-white hover:bg-white/[0.08] hover:border-white/40 hover:scale-105 transition-[transform,color,border-color,background-color] duration-200"
           >
             <FiGithub size={17} />
             View All Projects on GitHub
@@ -802,9 +797,7 @@ function ContactSection() {
               target={item.href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
               variants={scaleIn}
-              whileHover={{ y: -7, scale: 1.03 }}
-              transition={{ duration: 0.25 }}
-              className="group relative p-7 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm hover:border-white/20 transition-all duration-300 text-center overflow-hidden"
+              className="group relative p-7 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm hover:border-white/20 hover:-translate-y-2 hover:scale-[1.03] transition-[transform,border-color] duration-200 text-center overflow-hidden will-change-transform"
             >
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300`}
@@ -828,7 +821,7 @@ function ContactSection() {
         >
           <a
             href="mailto:rajbahakdanyu@gmail.com"
-            className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold text-lg hover:scale-105 hover:shadow-[0_0_45px_rgba(124,58,237,0.5)] transition-all duration-300"
+            className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold text-lg hover:scale-105 hover:shadow-[0_0_45px_rgba(124,58,237,0.5)] transition-[transform,box-shadow] duration-200"
           >
             <FiMail size={20} />
             Send Me a Message
