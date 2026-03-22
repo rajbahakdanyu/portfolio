@@ -8,8 +8,8 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="relative py-32 px-6">
       {/* Dividers */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-violet-500/40 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-violet-500/40 to-transparent" />
 
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -30,7 +30,7 @@ export default function SkillsSection() {
             className="text-5xl md:text-6xl font-black mt-3"
           >
             Skills &{" "}
-            <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
               Technologies
             </span>
           </motion.h2>
@@ -47,7 +47,7 @@ export default function SkillsSection() {
             <motion.div
               key={skill.name}
               variants={scaleIn}
-              className="group flex items-center gap-3 px-5 py-3 rounded-2xl border border-white/[0.08] bg-white/[0.04] hover:border-white/25 hover:bg-white/[0.08] hover:-translate-y-1 hover:scale-105 active:scale-[0.97] transition-[transform,border-color,background-color] duration-150 cursor-default will-change-transform"
+              className="group flex items-center gap-3 px-5 py-3 rounded-2xl border border-white/8 bg-white/4 hover:border-white/25 hover:bg-white/8 hover:-translate-y-1 hover:scale-105 active:scale-[0.97] transition-[transform,border-color,background-color] duration-150 cursor-default will-change-transform"
             >
               <skill.icon
                 size={22}

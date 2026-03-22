@@ -15,7 +15,7 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative py-10 px-6 border-t border-white/[0.06]">
+    <footer className="relative py-10 px-6 border-t border-white/6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <Image
           src="/portfolio/logo.svg"

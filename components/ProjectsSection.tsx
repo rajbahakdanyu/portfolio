@@ -53,7 +53,7 @@ export default function ProjectsSection() {
             className="text-5xl md:text-6xl font-black mt-3"
           >
             Featured{" "}
-            <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
               Projects
             </span>
           </motion.h2>
@@ -70,16 +70,16 @@ export default function ProjectsSection() {
             <motion.div
               key={project.title}
               variants={fadeInUp}
-              className="group relative rounded-3xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm overflow-hidden hover:border-white/20 hover:bg-white/[0.06] hover:-translate-y-2 transition-[transform,border-color,background-color] duration-200 will-change-transform"
+              className="group relative rounded-3xl border border-white/8 bg-white/4 backdrop-blur-sm overflow-hidden hover:border-white/20 hover:bg-white/6 hover:-translate-y-2 transition-[transform,border-color,background-color] duration-200 will-change-transform"
             >
               {/* Top gradient strip */}
               <div
-                className={`h-1.5 w-full bg-gradient-to-r ${project.gradient}`}
+                className={`h-1.5 w-full bg-linear-to-r ${project.gradient}`}
               />
               <div className="p-8">
                 <div className="flex items-start justify-between mb-5">
                   <span
-                    className={`text-7xl font-black bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent opacity-25 leading-none`}
+                    className={`text-7xl font-black bg-linear-to-r ${project.gradient} bg-clip-text text-transparent opacity-25 leading-none`}
                   >
                     {project.number}
                   </span>
@@ -117,7 +117,7 @@ export default function ProjectsSection() {
                     return (
                       <span
                         key={tag}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.12] bg-white/[0.04] px-3 py-1 text-xs font-medium text-gray-400"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-white/4 px-3 py-1 text-xs font-medium text-gray-400"
                       >
                         {Icon && <Icon size={11} />}
                         {tag}
@@ -141,7 +141,7 @@ export default function ProjectsSection() {
             href="https://github.com/rajbahakdanyu"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full border border-white/20 text-gray-300 font-medium hover:text-white hover:bg-white/[0.08] hover:border-white/40 hover:scale-105 transition-[transform,color,border-color,background-color] duration-200"
+            className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full border border-white/20 text-gray-300 font-medium hover:text-white hover:bg-white/8 hover:border-white/40 hover:scale-105 transition-[transform,color,border-color,background-color] duration-200"
           >
             <FiGithub size={17} />
             View All Projects on GitHub

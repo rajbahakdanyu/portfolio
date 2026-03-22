@@ -32,11 +32,11 @@ export default function HeroSection() {
       {/* Animated gradient orbs — pure CSS so they run on the compositor */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-violet-700/20 blur-[130px] will-change-transform"
+          className="absolute top-1/4 left-1/4 w-125 h-125 rounded-full bg-violet-700/20 blur-[130px] will-change-transform"
           style={{ animation: "orb-float-a 14s ease-in-out infinite" }}
         />
         <div
-          className="absolute bottom-1/4 right-1/4 w-[420px] h-[420px] rounded-full bg-indigo-700/20 blur-[110px] will-change-transform"
+          className="absolute bottom-1/4 right-1/4 w-105 h-105 rounded-full bg-indigo-700/20 blur-[110px] will-change-transform"
           style={{ animation: "orb-float-b 18s ease-in-out infinite" }}
         />
         <div
@@ -66,11 +66,11 @@ export default function HeroSection() {
           transition={{ delay: 0.4, duration: 0.9, ease: "easeOut" }}
           className="text-7xl md:text-[108px] lg:text-[120px] font-black leading-none tracking-tight mb-4"
         >
-          <span className="bg-gradient-to-br from-white via-white to-gray-400 bg-clip-text text-transparent">
+          <span className="bg-linear-to-br from-white via-white to-gray-400 bg-clip-text text-transparent">
             Danyu
           </span>
           <br />
-          <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-violet-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             Rajbahak
           </span>
         </motion.h1>
@@ -99,14 +99,14 @@ export default function HeroSection() {
           <button
             type="button"
             onClick={() => scrollToSection("projects")}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold tracking-wide hover:scale-105 hover:shadow-[0_0_35px_rgba(124,58,237,0.45)] transition-[transform,box-shadow] duration-200"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-linear-to-r from-violet-600 to-purple-600 text-white font-semibold tracking-wide hover:scale-105 hover:shadow-[0_0_35px_rgba(124,58,237,0.45)] transition-[transform,box-shadow] duration-200"
           >
             View My Work
           </button>
           <button
             type="button"
             onClick={() => scrollToSection("contact")}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/20 text-white font-semibold tracking-wide hover:bg-white/[0.08] hover:border-white/40 hover:scale-105 transition-[transform,border-color,background-color] duration-200"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/20 text-white font-semibold tracking-wide hover:bg-white/8 hover:border-white/40 hover:scale-105 transition-[transform,border-color,background-color] duration-200"
           >
             Get In Touch
           </button>
@@ -126,7 +126,7 @@ export default function HeroSection() {
               target={href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
               aria-label={label}
-              className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/50 hover:bg-white/[0.06] hover:scale-110 transition-[transform,color,border-color,background-color] duration-150"
+              className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/50 hover:bg-white/6 hover:scale-110 transition-[transform,color,border-color,background-color] duration-150"
             >
               <Icon size={18} />
             </a>

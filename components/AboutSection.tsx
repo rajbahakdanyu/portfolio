@@ -35,7 +35,7 @@ export default function AboutSection() {
               className="text-5xl md:text-6xl font-black mt-3 mb-8 leading-tight"
             >
               Crafting code,{" "}
-              <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
                 one pixel
               </span>{" "}
               at a time.
@@ -68,7 +68,7 @@ export default function AboutSection() {
                 href="https://github.com/rajbahakdanyu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/[0.08] hover:border-white/40 hover:scale-105 transition-[transform,border-color,background-color] duration-200 flex items-center gap-2"
+                className="px-6 py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/8 hover:border-white/40 hover:scale-105 transition-[transform,border-color,background-color] duration-200 flex items-center gap-2"
               >
                 <FiGithub size={16} />
                 GitHub
@@ -85,10 +85,10 @@ export default function AboutSection() {
               <motion.div
                 key={stat.label}
                 variants={scaleIn}
-                className="relative p-7 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm hover:border-violet-500/40 hover:scale-[1.04] hover:-translate-y-1 transition-[transform,border-color] duration-200 group overflow-hidden will-change-transform"
+                className="relative p-7 rounded-2xl border border-white/8 bg-white/4 backdrop-blur-sm hover:border-violet-500/40 hover:scale-[1.04] hover:-translate-y-1 transition-[transform,border-color] duration-200 group overflow-hidden will-change-transform"
               >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <p className="text-5xl font-black bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent mb-2">
+                <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <p className="text-5xl font-black bg-linear-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </p>
                 <p className="text-gray-500 text-sm font-medium">
