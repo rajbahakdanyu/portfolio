@@ -6,16 +6,16 @@ import {
   SiGit,
   SiMongodb,
   SiMui,
-  SiNestjs,
   SiNextdotjs,
   SiPostgresql,
   SiReact,
   SiRedis,
   SiTailwindcss,
   SiTypescript,
+  SiVite,
   SiVitest,
 } from "react-icons/si";
-import { TbTestPipe } from "react-icons/tb";
+import { TbFlame, TbTestPipe } from "react-icons/tb";
 
 export const NAV_LINKS = [
   "About",
@@ -99,7 +99,8 @@ export const SKILLS: Skill[] = [
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
   { name: "React", icon: SiReact, color: "#61DAFB" },
   { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
-  { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
+  { name: "Hono", icon: TbFlame, color: "#E36002" },
+  { name: "Vite", icon: SiVite, color: "#646CFF" },
   // Styling
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
   { name: "Material UI", icon: SiMui, color: "#007FFF" },
