@@ -129,40 +129,40 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    title: "E-Commerce Platform",
+    title: "AI Travel Itinerary Planner",
     description:
-      "A full-stack e-commerce platform with real-time inventory management, Stripe payments, and a rich admin dashboard built with Next.js and PostgreSQL.",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
+      "Natural language trip planning app that generates multi-day travel itineraries using AI, with saved trips, shareable links, and Redis-cached responses for performance.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Redis", "OpenAI"],
     github: "https://github.com/rajbahakdanyu",
     live: "#",
     gradient: "from-violet-600 to-indigo-600",
     number: "01",
   },
   {
-    title: "AI Chat Application",
+    title: "AI Agent Workflow Builder",
     description:
-      "Real-time conversational AI app powered by OpenAI's API with streaming responses, persistent conversation history, and beautiful markdown rendering.",
-    tags: ["React", "Node.js", "OpenAI API", "WebSockets"],
+      "Visual drag-and-drop builder for chaining LLM calls with tool use. Real-time streaming output, save/load workflows, and a node-based editor for composing AI agent pipelines.",
+    tags: ["Next.js", "TypeScript", "Hono", "PostgreSQL", "Redis"],
     github: "https://github.com/rajbahakdanyu",
     live: "#",
     gradient: "from-pink-600 to-rose-600",
     number: "02",
   },
   {
-    title: "Developer Analytics Dashboard",
+    title: "Distributed Job Queue Dashboard",
     description:
-      "An analytics platform that aggregates GitHub activity, code metrics, and productivity insights into a rich interactive visualisation dashboard.",
-    tags: ["Next.js", "TypeScript", "D3.js", "MongoDB"],
+      "Full-stack dashboard for scheduling and monitoring distributed background jobs. Features retry logic, failure alerts, live metrics charts, and multi-queue support via BullMQ and Redis.",
+    tags: ["Hono", "BullMQ", "Redis", "PostgreSQL", "Docker"],
     github: "https://github.com/rajbahakdanyu",
     live: "#",
     gradient: "from-emerald-600 to-teal-600",
     number: "03",
   },
   {
-    title: "Task Management App",
+    title: "Collaborative Code Review Tool",
     description:
-      "A collaborative task management tool with drag-and-drop boards, real-time multi-user updates, and a clean, minimal interface that keeps teams in sync.",
-    tags: ["React", "Node.js", "Socket.io", "PostgreSQL"],
+      "Real-time code review platform with live commenting on diffs, threaded discussions, GitHub OAuth, and presence indicators — powered by WebSockets and Redis Pub/Sub.",
+    tags: ["Next.js", "Hono", "WebSockets", "Redis", "PostgreSQL"],
     github: "https://github.com/rajbahakdanyu",
     live: "#",
     gradient: "from-amber-600 to-orange-600",
